@@ -33,12 +33,12 @@ namespace SpotifyCloneUI
             this.imageBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.registrationButton = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
@@ -47,11 +47,10 @@ namespace SpotifyCloneUI
             // 
             // imageBox
             // 
-            this.imageBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.imageBox.Image = ((System.Drawing.Image)(resources.GetObject("imageBox.Image")));
-            this.imageBox.Location = new System.Drawing.Point(485, 0);
+            this.imageBox.Location = new System.Drawing.Point(538, 99);
             this.imageBox.Name = "imageBox";
-            this.imageBox.Size = new System.Drawing.Size(348, 378);
+            this.imageBox.Size = new System.Drawing.Size(216, 226);
             this.imageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBox.TabIndex = 0;
             this.imageBox.TabStop = false;
@@ -60,7 +59,7 @@ namespace SpotifyCloneUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(192, 12);
+            this.label1.Location = new System.Drawing.Point(213, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 45);
             this.label1.TabIndex = 1;
@@ -74,19 +73,19 @@ namespace SpotifyCloneUI
             this.textBox1.Size = new System.Drawing.Size(271, 26);
             this.textBox1.TabIndex = 2;
             // 
-            // button1
+            // loginButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Crimson;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(305, 282);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 33);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = false;
+            this.loginButton.BackColor = System.Drawing.Color.Crimson;
+            this.loginButton.FlatAppearance.BorderSize = 0;
+            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginButton.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButton.ForeColor = System.Drawing.Color.White;
+            this.loginButton.Location = new System.Drawing.Point(316, 281);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(110, 33);
+            this.loginButton.TabIndex = 3;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -119,24 +118,25 @@ namespace SpotifyCloneUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 337);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(248, 27);
+            this.label4.Size = new System.Drawing.Size(224, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "Don\'t Have An Account?";
             // 
-            // label5
+            // registrationButton
             // 
-            this.label5.AutoSize = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label5.Font = new System.Drawing.Font("Yu Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Crimson;
-            this.label5.Location = new System.Drawing.Point(257, 337);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 27);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Sign Up";
+            this.registrationButton.AutoSize = true;
+            this.registrationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.registrationButton.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registrationButton.ForeColor = System.Drawing.Color.Crimson;
+            this.registrationButton.Location = new System.Drawing.Point(239, 337);
+            this.registrationButton.Name = "registrationButton";
+            this.registrationButton.Size = new System.Drawing.Size(85, 25);
+            this.registrationButton.TabIndex = 8;
+            this.registrationButton.Text = "Sign Up";
+            this.registrationButton.Click += new System.EventHandler(this.registrationButton_Click);
             // 
             // button2
             // 
@@ -153,7 +153,7 @@ namespace SpotifyCloneUI
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-2, 68);
+            this.panel1.Location = new System.Drawing.Point(12, 68);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(487, 66);
             this.panel1.TabIndex = 10;
@@ -162,15 +162,15 @@ namespace SpotifyCloneUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(833, 378);
+            this.ClientSize = new System.Drawing.Size(853, 402);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.registrationButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.loginButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.imageBox);
             this.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,12 +191,12 @@ namespace SpotifyCloneUI
         private System.Windows.Forms.PictureBox imageBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label registrationButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
     }

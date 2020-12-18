@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SpotifyCloneUI
 {
-    public partial class Login : Form
+    public partial class Registration : Form
     {
-        public Login()
+        public Registration()
         {
             InitializeComponent();
         }
@@ -22,16 +22,11 @@ namespace SpotifyCloneUI
             this.Dispose();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void registrationButton_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Registration registration = new Registration();
-            registration.ShowDialog();
+            Login login = new Login();
+            login.ShowDialog();
         }
     }
 }
