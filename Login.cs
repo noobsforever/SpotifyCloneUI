@@ -33,5 +33,12 @@ namespace SpotifyCloneUI
             Registration registration = new Registration();
             registration.ShowDialog();
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.ShowDialog();
+        }
     }
 }
