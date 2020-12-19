@@ -22,16 +22,17 @@ namespace SpotifyCloneUI
             this.Dispose();
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            searchButton.Checked = true;
-            homeButton.Checked = false;
-        }
+       
 
         private void homeButton_Click(object sender, EventArgs e)
         {
             homeButton.Checked = true;
-            searchButton.Checked = false;
+            
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
