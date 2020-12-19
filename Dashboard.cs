@@ -35,5 +35,12 @@ namespace SpotifyCloneUI
         {
 
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SearchForm searchform = new SearchForm();
+            searchform.ShowDialog();
+        }
     }
 }
