@@ -70,6 +70,12 @@
     <Compile Include="PlaylistEntry.Designer.cs">
       <DependentUpon>PlaylistEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlaylistView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlaylistView.Designer.cs">
+      <DependentUpon>PlaylistView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.cs">
@@ -77,6 +83,12 @@
     </Compile>
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SongItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SongItem.Designer.cs">
+      <DependentUpon>SongItem.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -86,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlaylistEntry.resx">
       <DependentUpon>PlaylistEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlaylistView.resx">
+      <DependentUpon>PlaylistView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,6 +113,9 @@
     </Compile>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SongItem.resx">
+      <DependentUpon>SongItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

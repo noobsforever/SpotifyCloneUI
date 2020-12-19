@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace SpotifyCloneUI
 {
-    public partial class PlaylistEntry : UserControl
+    public partial class PlaylistView : Form
     {
-        public PlaylistEntry()
+        public PlaylistView()
         {
             InitializeComponent();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            ParentForm.Hide();
-            PlaylistView view = new PlaylistView();
-            view.ShowDialog();
+            this.Close();
+            Dashboard dashboard = new Dashboard();
+            dashboard.ShowDialog();
         }
     }
 }

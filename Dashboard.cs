@@ -30,5 +30,10 @@ namespace SpotifyCloneUI
         {
 
         }
+
+        private void playlistEntry1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

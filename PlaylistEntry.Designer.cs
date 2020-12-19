@@ -51,6 +51,7 @@ namespace SpotifyCloneUI
             this.guna2Button1.Size = new System.Drawing.Size(736, 77);
             this.guna2Button1.TabIndex = 0;
             this.guna2Button1.Text = "Playlist Name";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // PlaylistEntry
             // 

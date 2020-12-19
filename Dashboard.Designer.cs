@@ -98,7 +98,7 @@ namespace SpotifyCloneUI
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
             this.guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconLeft")));
-            this.guna2TextBox1.Location = new System.Drawing.Point(12, 231);
+            this.guna2TextBox1.Location = new System.Drawing.Point(12, 214);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
@@ -128,6 +128,7 @@ namespace SpotifyCloneUI
             this.playlistEntry1.Name = "playlistEntry1";
             this.playlistEntry1.Size = new System.Drawing.Size(739, 84);
             this.playlistEntry1.TabIndex = 0;
+            this.playlistEntry1.Load += new System.EventHandler(this.playlistEntry1_Load);
             // 
             // playlistEntry2
             // 
@@ -170,7 +171,7 @@ namespace SpotifyCloneUI
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.Location = new System.Drawing.Point(12, 159);
+            this.guna2Button1.Location = new System.Drawing.Point(12, 142);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(237, 53);
