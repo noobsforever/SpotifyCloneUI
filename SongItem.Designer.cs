@@ -74,6 +74,7 @@ namespace SpotifyCloneUI
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(64, 51);
             this.guna2Button1.TabIndex = 2;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // comboBox1
             // 

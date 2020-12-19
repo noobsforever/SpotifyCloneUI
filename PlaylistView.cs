@@ -23,5 +23,10 @@ namespace SpotifyCloneUI
             Dashboard dashboard = new Dashboard();
             dashboard.ShowDialog();
         }
+
+        private void songItem1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

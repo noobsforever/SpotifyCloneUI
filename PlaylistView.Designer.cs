@@ -88,6 +88,7 @@ namespace SpotifyCloneUI
             this.songItem1.Name = "songItem1";
             this.songItem1.Size = new System.Drawing.Size(446, 163);
             this.songItem1.TabIndex = 0;
+            this.songItem1.Load += new System.EventHandler(this.songItem1_Load);
             // 
             // songItem2
             // 

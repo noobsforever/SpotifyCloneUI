@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace SpotifyCloneUI
 {
-    public partial class SongItem : UserControl
+    public partial class MusicPlayer : Form
     {
-        public SongItem()
+        public MusicPlayer()
         {
             InitializeComponent();
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            ParentForm.Hide();
-            MusicPlayer player = new MusicPlayer();
-            player.ShowDialog();
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
