@@ -36,7 +36,14 @@ namespace SpotifyCloneUI
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.playlistEntry1 = new SpotifyCloneUI.PlaylistEntry();
+            this.playlistEntry2 = new SpotifyCloneUI.PlaylistEntry();
+            this.playlistEntry3 = new SpotifyCloneUI.PlaylistEntry();
+            this.playlistEntry4 = new SpotifyCloneUI.PlaylistEntry();
+            this.playlistEntry5 = new SpotifyCloneUI.PlaylistEntry();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // homeButton
@@ -128,7 +135,7 @@ namespace SpotifyCloneUI
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
             this.guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconLeft")));
-            this.guna2TextBox1.Location = new System.Drawing.Point(414, 59);
+            this.guna2TextBox1.Location = new System.Drawing.Point(493, 59);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
@@ -139,11 +146,60 @@ namespace SpotifyCloneUI
             this.guna2TextBox1.Size = new System.Drawing.Size(324, 43);
             this.guna2TextBox1.TabIndex = 3;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.playlistEntry1);
+            this.flowLayoutPanel1.Controls.Add(this.playlistEntry2);
+            this.flowLayoutPanel1.Controls.Add(this.playlistEntry3);
+            this.flowLayoutPanel1.Controls.Add(this.playlistEntry4);
+            this.flowLayoutPanel1.Controls.Add(this.playlistEntry5);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(265, 125);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(769, 468);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // playlistEntry1
+            // 
+            this.playlistEntry1.Location = new System.Drawing.Point(3, 3);
+            this.playlistEntry1.Name = "playlistEntry1";
+            this.playlistEntry1.Size = new System.Drawing.Size(739, 84);
+            this.playlistEntry1.TabIndex = 0;
+            // 
+            // playlistEntry2
+            // 
+            this.playlistEntry2.Location = new System.Drawing.Point(3, 93);
+            this.playlistEntry2.Name = "playlistEntry2";
+            this.playlistEntry2.Size = new System.Drawing.Size(739, 84);
+            this.playlistEntry2.TabIndex = 1;
+            // 
+            // playlistEntry3
+            // 
+            this.playlistEntry3.Location = new System.Drawing.Point(3, 183);
+            this.playlistEntry3.Name = "playlistEntry3";
+            this.playlistEntry3.Size = new System.Drawing.Size(739, 84);
+            this.playlistEntry3.TabIndex = 2;
+            // 
+            // playlistEntry4
+            // 
+            this.playlistEntry4.Location = new System.Drawing.Point(3, 273);
+            this.playlistEntry4.Name = "playlistEntry4";
+            this.playlistEntry4.Size = new System.Drawing.Size(739, 84);
+            this.playlistEntry4.TabIndex = 3;
+            // 
+            // playlistEntry5
+            // 
+            this.playlistEntry5.Location = new System.Drawing.Point(3, 363);
+            this.playlistEntry5.Name = "playlistEntry5";
+            this.playlistEntry5.Size = new System.Drawing.Size(739, 84);
+            this.playlistEntry5.TabIndex = 4;
+            // 
             // Dashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(1073, 605);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.usernameDisplay);
@@ -156,6 +212,7 @@ namespace SpotifyCloneUI
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +225,11 @@ namespace SpotifyCloneUI
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private PlaylistEntry playlistEntry1;
+        private PlaylistEntry playlistEntry2;
+        private PlaylistEntry playlistEntry3;
+        private PlaylistEntry playlistEntry4;
+        private PlaylistEntry playlistEntry5;
     }
 }
