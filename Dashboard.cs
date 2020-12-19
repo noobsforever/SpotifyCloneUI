@@ -24,11 +24,7 @@ namespace SpotifyCloneUI
 
        
 
-        private void homeButton_Click(object sender, EventArgs e)
-        {
-            homeButton.Checked = true;
-            
-        }
+        
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
