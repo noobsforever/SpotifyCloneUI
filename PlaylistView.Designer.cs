@@ -37,6 +37,7 @@ namespace SpotifyCloneUI
             this.songItem2 = new SpotifyCloneUI.SongItem();
             this.songItem3 = new SpotifyCloneUI.SongItem();
             this.songItem4 = new SpotifyCloneUI.SongItem();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,11 +113,28 @@ namespace SpotifyCloneUI
             this.songItem4.Size = new System.Drawing.Size(446, 163);
             this.songItem4.TabIndex = 3;
             // 
+            // guna2Button2
+            // 
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
+            this.guna2Button2.ImageSize = new System.Drawing.Size(60, 60);
+            this.guna2Button2.Location = new System.Drawing.Point(588, 12);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(64, 51);
+            this.guna2Button2.TabIndex = 9;
+            // 
             // PlaylistView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(673, 598);
+            this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button1);
@@ -139,5 +157,6 @@ namespace SpotifyCloneUI
         private SongItem songItem2;
         private SongItem songItem3;
         private SongItem songItem4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
