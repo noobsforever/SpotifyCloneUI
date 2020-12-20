@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MongoDB.Bson;
+using MongoDB.Driver;
 namespace SpotifyCloneUI
 {
     public partial class Dashboard : Form
     {
+        public static IMongoClient client { get; set; }
+        public static IMongoDatabase database { get; set; }
+        public static string MongoConnection = "mongodb+srv://sunderali416:sunderali416@clustersocialmediaproject-z6nzz.mongodb.net/test?retryWrites=true&w=majority";
+        public static string MongoDatabase = "SpotifyClone";
         public Dashboard()
         {
             InitializeComponent();
@@ -28,7 +33,38 @@ namespace SpotifyCloneUI
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            usernameDisplay.Text = UserData.username;
+            try
+            {
+                client = new MongoClient(MongoConnection);
+                database = client.GetDatabase(MongoDatabase);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Connectivity Error, Make Sure You Have Proper Internet Connection..");
+                throw;
+            }
 
+            var i = 0;
+            var collection = database.GetCollection<BsonDocument>("playlist");
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("user_id", UserData.id);
+            var result = collection.Find(filter).SortBy(bson => bson["_id"]).ThenByDescending(bson => bson["_id"]).ToList();
+            PlaylistEntry[] playlists = new PlaylistEntry[result.Count];
+            foreach (var playlist in result)
+            {
+                playlists[i] = new PlaylistEntry();
+                playlists[i].Playlist_Name = playlist[2].ToString();
+                playlists[i].Playlist_Id = playlist[0].ToString();
+                playlists[i].Margin = new Padding(0, 0, 0, 0);
+                playlistPanel.Controls.Add(playlists[i]);
+                i++;
+            }
+
+            if (i == 0)
+            {
+                emptyLabel.Visible = true;
+            }
         }
 
         private void playlistEntry1_Load(object sender, EventArgs e)
@@ -41,6 +77,56 @@ namespace SpotifyCloneUI
             this.Hide();
             SearchForm searchform = new SearchForm();
             searchform.ShowDialog();
+        }
+
+        private void guna2TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void playlistInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            bool isSame = false;
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (playlistInput.Text == "")
+                {
+                    MessageBox.Show("Playlist Name Cannot Be Empty");
+                }
+                else
+                {
+                    var collection = database.GetCollection<BsonDocument>("playlist");
+                    var builder = Builders<BsonDocument>.Filter;
+                    var filter = builder.Eq("user_id", UserData.id);
+                    var result = collection.Find(filter).ToList();
+                    foreach (var playlist in result)
+                    {
+                        if (playlist[2].ToString() == playlistInput.Text)
+                        {
+                            isSame = true;
+                        }
+                    }
+
+                    if (!isSame)
+                    {
+                        var collection2 = database.GetCollection<BsonDocument>("playlist");
+                        var newItem = new BsonDocument
+                    {
+                        { "user_id",UserData.id },
+                        {"name",playlistInput.Text },
+                    };
+                        collection2.InsertOne(newItem);
+                        this.Hide();
+                        Dashboard home = new Dashboard();
+                        home.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Playlist with this name already exists..");
+                        playlistInput.Text = "";
+                    }
+                }
+            }
         }
     }
 }

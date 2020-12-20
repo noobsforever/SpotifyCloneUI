@@ -37,16 +37,16 @@ namespace SpotifyCloneUI
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.emailText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.registerButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameText = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.passwordText = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.usernameText = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dobText = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -124,12 +124,12 @@ namespace SpotifyCloneUI
             this.label3.TabIndex = 15;
             this.label3.Text = "Email:";
             // 
-            // textBox2
+            // emailText
             // 
-            this.textBox2.Location = new System.Drawing.Point(186, 191);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(271, 20);
-            this.textBox2.TabIndex = 14;
+            this.emailText.Location = new System.Drawing.Point(186, 191);
+            this.emailText.Name = "emailText";
+            this.emailText.Size = new System.Drawing.Size(271, 20);
+            this.emailText.TabIndex = 14;
             // 
             // label2
             // 
@@ -154,13 +154,14 @@ namespace SpotifyCloneUI
             this.registerButton.TabIndex = 12;
             this.registerButton.Text = "Register";
             this.registerButton.UseVisualStyleBackColor = false;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
-            // textBox1
+            // nameText
             // 
-            this.textBox1.Location = new System.Drawing.Point(186, 131);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(271, 20);
-            this.textBox1.TabIndex = 11;
+            this.nameText.Location = new System.Drawing.Point(186, 131);
+            this.nameText.Name = "nameText";
+            this.nameText.Size = new System.Drawing.Size(271, 20);
+            this.nameText.TabIndex = 11;
             // 
             // label6
             // 
@@ -172,13 +173,13 @@ namespace SpotifyCloneUI
             this.label6.TabIndex = 22;
             this.label6.Text = "Password:";
             // 
-            // textBox3
+            // passwordText
             // 
-            this.textBox3.Location = new System.Drawing.Point(186, 300);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(271, 20);
-            this.textBox3.TabIndex = 21;
+            this.passwordText.Location = new System.Drawing.Point(186, 300);
+            this.passwordText.Name = "passwordText";
+            this.passwordText.PasswordChar = '*';
+            this.passwordText.Size = new System.Drawing.Size(271, 20);
+            this.passwordText.TabIndex = 21;
             // 
             // label7
             // 
@@ -190,12 +191,12 @@ namespace SpotifyCloneUI
             this.label7.TabIndex = 20;
             this.label7.Text = "Username:";
             // 
-            // textBox4
+            // usernameText
             // 
-            this.textBox4.Location = new System.Drawing.Point(186, 240);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(271, 20);
-            this.textBox4.TabIndex = 19;
+            this.usernameText.Location = new System.Drawing.Point(186, 240);
+            this.usernameText.Name = "usernameText";
+            this.usernameText.Size = new System.Drawing.Size(271, 20);
+            this.usernameText.TabIndex = 19;
             // 
             // label8
             // 
@@ -207,38 +208,39 @@ namespace SpotifyCloneUI
             this.label8.TabIndex = 23;
             this.label8.Text = "Date Of Birth:";
             // 
-            // dateTimePicker1
+            // dobText
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(186, 365);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 24;
+            this.dobText.Location = new System.Drawing.Point(186, 365);
+            this.dobText.Name = "dobText";
+            this.dobText.Size = new System.Drawing.Size(200, 20);
+            this.dobText.TabIndex = 24;
             // 
             // Registration
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(847, 522);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dobText);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.passwordText);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.usernameText);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.emailText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.registerButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nameText);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
+            this.Load += new System.EventHandler(this.Registration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -256,15 +258,15 @@ namespace SpotifyCloneUI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox emailText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button registerButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nameText;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox passwordText;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox usernameText;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dobText;
     }
 }

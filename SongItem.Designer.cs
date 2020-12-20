@@ -30,93 +30,95 @@ namespace SpotifyCloneUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SongItem));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.singerLabel = new System.Windows.Forms.Label();
+            this.playButton = new Guna.UI2.WinForms.Guna2Button();
+            this.addButton = new System.Windows.Forms.ComboBox();
+            this.removeButton = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
-            // label1
+            // nameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Song Name";
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.ForeColor = System.Drawing.Color.White;
+            this.nameLabel.Location = new System.Drawing.Point(13, 13);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(165, 31);
+            this.nameLabel.TabIndex = 0;
+            this.nameLabel.Text = "Song Name";
             // 
-            // label2
+            // singerLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(15, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Singer Name";
+            this.singerLabel.AutoSize = true;
+            this.singerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.singerLabel.ForeColor = System.Drawing.Color.Silver;
+            this.singerLabel.Location = new System.Drawing.Point(15, 53);
+            this.singerLabel.Name = "singerLabel";
+            this.singerLabel.Size = new System.Drawing.Size(101, 20);
+            this.singerLabel.TabIndex = 1;
+            this.singerLabel.Text = "Singer Name";
             // 
-            // guna2Button1
+            // playButton
             // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(59)))), ((int)(((byte)(58)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageSize = new System.Drawing.Size(60, 60);
-            this.guna2Button1.Location = new System.Drawing.Point(3, 95);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(64, 51);
-            this.guna2Button1.TabIndex = 2;
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.playButton.CheckedState.Parent = this.playButton;
+            this.playButton.CustomImages.Parent = this.playButton;
+            this.playButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(59)))), ((int)(((byte)(58)))));
+            this.playButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.playButton.ForeColor = System.Drawing.Color.White;
+            this.playButton.HoverState.Parent = this.playButton;
+            this.playButton.Image = ((System.Drawing.Image)(resources.GetObject("playButton.Image")));
+            this.playButton.ImageSize = new System.Drawing.Size(60, 60);
+            this.playButton.Location = new System.Drawing.Point(3, 95);
+            this.playButton.Name = "playButton";
+            this.playButton.ShadowDecoration.Parent = this.playButton;
+            this.playButton.Size = new System.Drawing.Size(64, 51);
+            this.playButton.TabIndex = 2;
+            this.playButton.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // comboBox1
+            // addButton
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(59)))), ((int)(((byte)(58)))));
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(73, 109);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 28);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.Text = "Add To Other Playlist";
+            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(59)))), ((int)(((byte)(58)))));
+            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addButton.ForeColor = System.Drawing.Color.White;
+            this.addButton.FormattingEnabled = true;
+            this.addButton.Location = new System.Drawing.Point(73, 109);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(196, 28);
+            this.addButton.TabIndex = 3;
+            this.addButton.Text = "Add To Other Playlist";
+            this.addButton.SelectedValueChanged += new System.EventHandler(this.addButton_SelectedValueChanged);
             // 
-            // guna2Button2
+            // removeButton
             // 
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(59)))), ((int)(((byte)(58)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageSize = new System.Drawing.Size(60, 60);
-            this.guna2Button2.Location = new System.Drawing.Point(275, 95);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(64, 51);
-            this.guna2Button2.TabIndex = 4;
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.removeButton.CheckedState.Parent = this.removeButton;
+            this.removeButton.CustomImages.Parent = this.removeButton;
+            this.removeButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(59)))), ((int)(((byte)(58)))));
+            this.removeButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.removeButton.ForeColor = System.Drawing.Color.White;
+            this.removeButton.HoverState.Parent = this.removeButton;
+            this.removeButton.Image = ((System.Drawing.Image)(resources.GetObject("removeButton.Image")));
+            this.removeButton.ImageSize = new System.Drawing.Size(60, 60);
+            this.removeButton.Location = new System.Drawing.Point(275, 95);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.ShadowDecoration.Parent = this.removeButton;
+            this.removeButton.Size = new System.Drawing.Size(64, 51);
+            this.removeButton.TabIndex = 4;
+            this.removeButton.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // SongItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(59)))), ((int)(((byte)(58)))));
-            this.Controls.Add(this.guna2Button2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.removeButton);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.playButton);
+            this.Controls.Add(this.singerLabel);
+            this.Controls.Add(this.nameLabel);
             this.Name = "SongItem";
             this.Size = new System.Drawing.Size(446, 163);
+            this.Load += new System.EventHandler(this.SongItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,10 +126,10 @@ namespace SpotifyCloneUI
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label singerLabel;
+        private Guna.UI2.WinForms.Guna2Button playButton;
+        private System.Windows.Forms.ComboBox addButton;
+        private Guna.UI2.WinForms.Guna2Button removeButton;
     }
 }
