@@ -178,6 +178,7 @@ namespace SpotifyCloneUI
             this.previousButton.ShadowDecoration.Parent = this.previousButton;
             this.previousButton.Size = new System.Drawing.Size(48, 45);
             this.previousButton.TabIndex = 2;
+            this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
             // 
             // playButton
             // 

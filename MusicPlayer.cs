@@ -24,8 +24,10 @@ namespace SpotifyCloneUI
         private WaveOutEvent outputDevice;
         private MediaFoundationReader audioFile;
 
-        LinkedListNode<string> current = new LinkedListNode<string>("");
-        LinkedList<string> songs_list = new LinkedList<string>();
+        DoublyLinked songs_list = new DoublyLinked();
+        Node current = new Node();
+        
+
         string playlist_id;
         string song_link;
         public string playlist_name;
@@ -36,6 +38,7 @@ namespace SpotifyCloneUI
             playlist_id = p_id;
             song_link = s_link;
             InitializeComponent();
+            current.data = "";
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -91,20 +94,28 @@ namespace SpotifyCloneUI
                 {
                     foreach (var song in result)
                     {
-                        songs_list.AddFirst(song[4].ToString());
+                        if (i == 0)
+                        {
+                            songs_list.insertEnd(song[4].ToString());
+                        }
+                        else
+                        {
+                            songs_list.insertBegin(song[4].ToString());
+                        }
+                        
                         i++;
                     }
                 }
 
 
-                current = songs_list.First;
+                current = songs_list.start;
                 while (true)
                 {
-                    if (current.Value == song_link)
+                    if (current.data == song_link)
                     {
                         break;
                     }
-                    current = current.Next;
+                    current = current.next;
                 }
 
                 var collection2 = database.GetCollection<BsonDocument>("playlist");
@@ -117,7 +128,7 @@ namespace SpotifyCloneUI
 
                 var collection3 = database.GetCollection<BsonDocument>("songs");
                 var builder3 = Builders<BsonDocument>.Filter;
-                var filter3 = builder3.Eq("link", current.Value);
+                var filter3 = builder3.Eq("link", current.data);
                 var result3 = collection3.Find(filter3).ToList();
 
                 song_name = result3[0][1].ToString();
@@ -193,11 +204,11 @@ namespace SpotifyCloneUI
             audioFile.Dispose();
             audioFile = null;
 
-            current = current.Next;
-            song_link = current.Value;
+            current = current.next;
+            song_link = current.data;
             var collection3 = database.GetCollection<BsonDocument>("songs");
             var builder3 = Builders<BsonDocument>.Filter;
-            var filter3 = builder3.Eq("link", current.Value);
+            var filter3 = builder3.Eq("link", current.data);
             var result3 = collection3.Find(filter3).ToList();
 
             song_name = result3[0][1].ToString();
@@ -219,6 +230,33 @@ namespace SpotifyCloneUI
                 outputDevice.Volume = volumeSlider1.Value / 100f;
             }
             
+        }
+
+        private void previousButton_Click(object sender, EventArgs e)
+        {
+            outputDevice?.Stop();
+            outputDevice.Dispose();
+            outputDevice = null;
+            audioFile.Dispose();
+            audioFile = null;
+
+            current = current.prev;
+            song_link = current.data;
+            var collection3 = database.GetCollection<BsonDocument>("songs");
+            var builder3 = Builders<BsonDocument>.Filter;
+            var filter3 = builder3.Eq("link", current.data);
+            var result3 = collection3.Find(filter3).ToList();
+
+            song_name = result3[0][1].ToString();
+            singer_name = result3[0][3].ToString();
+            nameLabel.Text = song_name;
+            singerLabel.Text = singer_name;
+
+            outputDevice = new WaveOutEvent();
+            audioFile = new MediaFoundationReader(song_link);
+            outputDevice.Init(audioFile);
+            outputDevice.Volume = volumeSlider1.Value / 100f;
+            outputDevice.Play();
         }
     }
 }
