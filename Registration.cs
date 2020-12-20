@@ -62,6 +62,32 @@ namespace SpotifyCloneUI
             };
             collection.InsertOne(user);
             MessageBox.Show("Successful");
+
+            
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.And(builder.Eq("email", emailText.Text), builder.Eq("password", passwordText.Text));
+            var result = collection.Find(filter).ToList();
+            string userId;
+           
+                var user1 = result[0];
+                userId = user1[0].ToString();
+            
+
+
+            var collection2 = database.GetCollection<BsonDocument>("playlist");
+            var playlist1 = new BsonDocument
+            {
+                { "user_id",userId },
+                {"name","Recently Played" }
+            };
+
+            var playlist2 = new BsonDocument
+            {
+                { "user_id",userId },
+                {"name","Liked" }
+            };
+            collection2.InsertOne(playlist2);
+            collection2.InsertOne(playlist1);
             this.Hide();
             Login login = new Login();
             login.ShowDialog();

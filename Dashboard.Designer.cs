@@ -181,6 +181,7 @@ namespace SpotifyCloneUI
             this.guna2Button2.Size = new System.Drawing.Size(237, 53);
             this.guna2Button2.TabIndex = 7;
             this.guna2Button2.Text = "Recently Played";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button3
             // 
@@ -201,6 +202,7 @@ namespace SpotifyCloneUI
             this.guna2Button3.Size = new System.Drawing.Size(237, 53);
             this.guna2Button3.TabIndex = 8;
             this.guna2Button3.Text = "Liked Songs";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // Dashboard
             // 
