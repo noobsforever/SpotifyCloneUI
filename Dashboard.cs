@@ -53,7 +53,7 @@ namespace SpotifyCloneUI
             PlaylistEntry[] playlists = new PlaylistEntry[result.Count];
             foreach (var playlist in result)
             {
-                if(playlist[2].ToString()!="Liked" && playlist[2].ToString()!="Recently Played")
+                if(playlist[2].ToString()!="Liked")
                 {
                     playlists[i] = new PlaylistEntry();
                     playlists[i].Playlist_Name = playlist[2].ToString();

@@ -33,7 +33,9 @@ namespace SpotifyCloneUI
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.nameLabel = new System.Windows.Forms.Label();
             this.songsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
+            this.emptyLabel = new System.Windows.Forms.Label();
+            this.songsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Button1
@@ -67,33 +69,47 @@ namespace SpotifyCloneUI
             // songsPanel
             // 
             this.songsPanel.AutoScroll = true;
+            this.songsPanel.Controls.Add(this.emptyLabel);
             this.songsPanel.Location = new System.Drawing.Point(94, 73);
             this.songsPanel.Name = "songsPanel";
             this.songsPanel.Size = new System.Drawing.Size(487, 513);
             this.songsPanel.TabIndex = 8;
             // 
-            // guna2Button2
+            // deleteButton
             // 
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageSize = new System.Drawing.Size(60, 60);
-            this.guna2Button2.Location = new System.Drawing.Point(588, 12);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(64, 51);
-            this.guna2Button2.TabIndex = 9;
+            this.deleteButton.CheckedState.Parent = this.deleteButton;
+            this.deleteButton.CustomImages.Parent = this.deleteButton;
+            this.deleteButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.deleteButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.deleteButton.ForeColor = System.Drawing.Color.White;
+            this.deleteButton.HoverState.Parent = this.deleteButton;
+            this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
+            this.deleteButton.ImageSize = new System.Drawing.Size(60, 60);
+            this.deleteButton.Location = new System.Drawing.Point(588, 12);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.ShadowDecoration.Parent = this.deleteButton;
+            this.deleteButton.Size = new System.Drawing.Size(64, 51);
+            this.deleteButton.TabIndex = 9;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // emptyLabel
+            // 
+            this.emptyLabel.AutoSize = true;
+            this.emptyLabel.Font = new System.Drawing.Font("Yu Gothic", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emptyLabel.ForeColor = System.Drawing.Color.White;
+            this.emptyLabel.Location = new System.Drawing.Point(3, 0);
+            this.emptyLabel.Name = "emptyLabel";
+            this.emptyLabel.Size = new System.Drawing.Size(318, 42);
+            this.emptyLabel.TabIndex = 8;
+            this.emptyLabel.Text = "Wow! Such Empty....";
+            this.emptyLabel.Visible = false;
             // 
             // PlaylistView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(673, 598);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.songsPanel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.guna2Button1);
@@ -102,6 +118,8 @@ namespace SpotifyCloneUI
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PlaylistView";
             this.Load += new System.EventHandler(this.PlaylistView_Load);
+            this.songsPanel.ResumeLayout(false);
+            this.songsPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,6 +130,7 @@ namespace SpotifyCloneUI
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.FlowLayoutPanel songsPanel;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button deleteButton;
+        private System.Windows.Forms.Label emptyLabel;
     }
 }

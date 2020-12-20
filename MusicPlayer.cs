@@ -258,5 +258,6 @@ namespace SpotifyCloneUI
             outputDevice.Volume = volumeSlider1.Value / 100f;
             outputDevice.Play();
         }
+        
     }
 }
