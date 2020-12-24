@@ -35,7 +35,7 @@ namespace SpotifyCloneUI
             this.volumeSlider1 = new Guna.UI2.WinForms.Guna2HScrollBar();
             this.singerLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.song_picture = new System.Windows.Forms.PictureBox();
             this.stopButton = new Guna.UI2.WinForms.Guna2Button();
             this.pauseButton = new Guna.UI2.WinForms.Guna2Button();
             this.previousButton = new Guna.UI2.WinForms.Guna2Button();
@@ -43,7 +43,7 @@ namespace SpotifyCloneUI
             this.nextButton = new Guna.UI2.WinForms.Guna2Button();
             this.playlistnameLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.song_picture)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Button1
@@ -69,7 +69,7 @@ namespace SpotifyCloneUI
             this.panel1.Controls.Add(this.volumeSlider1);
             this.panel1.Controls.Add(this.singerLabel);
             this.panel1.Controls.Add(this.nameLabel);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.song_picture);
             this.panel1.Controls.Add(this.stopButton);
             this.panel1.Controls.Add(this.pauseButton);
             this.panel1.Controls.Add(this.previousButton);
@@ -119,15 +119,15 @@ namespace SpotifyCloneUI
             this.nameLabel.Text = "Song Name";
             this.nameLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // pictureBox1
+            // song_picture
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(72, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(565, 293);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.song_picture.Image = ((System.Drawing.Image)(resources.GetObject("song_picture.Image")));
+            this.song_picture.Location = new System.Drawing.Point(72, 3);
+            this.song_picture.Name = "song_picture";
+            this.song_picture.Size = new System.Drawing.Size(565, 293);
+            this.song_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.song_picture.TabIndex = 6;
+            this.song_picture.TabStop = false;
             // 
             // stopButton
             // 
@@ -240,7 +240,7 @@ namespace SpotifyCloneUI
             this.Load += new System.EventHandler(this.MusicPlayer_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.song_picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,7 +256,7 @@ namespace SpotifyCloneUI
         private Guna.UI2.WinForms.Guna2Button playButton;
         private Guna.UI2.WinForms.Guna2Button nextButton;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox song_picture;
         private System.Windows.Forms.Label singerLabel;
         private Guna.UI2.WinForms.Guna2HScrollBar volumeSlider1;
         private System.Windows.Forms.Label playlistnameLabel;

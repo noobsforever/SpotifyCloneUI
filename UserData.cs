@@ -12,6 +12,7 @@ namespace SpotifyCloneUI
         public static string email { get; set; }
         public static string name { get; set; }
         public static string password { get; set; }
-        public static string username { get; set; }
+        public static string username { get; set; } 
+        public static string recentId { get; set; }
     }
 }

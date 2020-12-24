@@ -42,7 +42,7 @@ namespace SpotifyCloneUI
 
         private void PlaylistView_Load(object sender, EventArgs e)
         {
-            if(playlist_name == "Liked")
+            if(playlist_name == "Liked" || playlist_name=="Recently Played")
             {
                 deleteButton.Visible = false;
             }
@@ -97,7 +97,7 @@ namespace SpotifyCloneUI
                             alreadyInPlaylist = true;
                         }
                     }
-                    if (!alreadyInPlaylist)
+                    if (!alreadyInPlaylist && playlist[2].ToString()!="Recently Played")
                     {
                         songitems[i].addPlaylistCombo(playlist[2].ToString());
                     }

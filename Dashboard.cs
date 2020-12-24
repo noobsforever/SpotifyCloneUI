@@ -53,7 +53,7 @@ namespace SpotifyCloneUI
             PlaylistEntry[] playlists = new PlaylistEntry[result.Count];
             foreach (var playlist in result)
             {
-                if(playlist[2].ToString()!="Liked")
+                if(playlist[2].ToString()!="Recently Played")
                 {
                     playlists[i] = new PlaylistEntry();
                     playlists[i].Playlist_Name = playlist[2].ToString();
@@ -135,25 +135,18 @@ namespace SpotifyCloneUI
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var collection = database.GetCollection<BsonDocument>("playlist");
-            var builder = Builders<BsonDocument>.Filter;
-            var filter = builder.And(builder.Eq("name", "Recently Played"), builder.Eq("user_id",UserData.id));
-            var result = collection.Find(filter).ToList();
-            var resultPlaylist = result[0];
-            this.Hide();
-            PlaylistView playlistview = new PlaylistView(resultPlaylist[0].ToString(), "Recently Played");
-            playlistview.ShowDialog();
+           
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             var collection = database.GetCollection<BsonDocument>("playlist");
             var builder = Builders<BsonDocument>.Filter;
-            var filter = builder.And(builder.Eq("name", "Liked"), builder.Eq("user_id", UserData.id));
+            var filter = builder.And(builder.Eq("name", "Recently Played"), builder.Eq("user_id", UserData.id));
             var result = collection.Find(filter).ToList();
             var resultPlaylist = result[0];
             this.Hide();
-            PlaylistView playlistview = new PlaylistView(resultPlaylist[0].ToString(), "Liked");
+            PlaylistView playlistview = new PlaylistView(resultPlaylist[0].ToString(), "Recently Played");
             playlistview.ShowDialog();
         }
     }

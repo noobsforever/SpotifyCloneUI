@@ -53,6 +53,30 @@ namespace SpotifyCloneUI
                 UserData.id = user1[0].ToString();
                 UserData.password = user1[4].ToString();
                 UserData.username = user1[3].ToString();
+
+                var collection2 = database.GetCollection<BsonDocument>("playlist");
+                var builder2 = Builders<BsonDocument>.Filter;
+                var filter2 = builder.Eq("user_id", UserData.id);
+                var result2 = collection2.Find(filter2).ToList();
+
+                foreach(var playL in result2)
+                {
+                    if(playL[2].ToString()=="Recently Played")
+                    {
+                        UserData.recentId = playL[0].ToString();
+                    }
+                }
+
+                var collection3 = database.GetCollection<BsonDocument>("playlist_item");
+                var builder3 = Builders<BsonDocument>.Filter;
+                var filter3 = builder3.Eq("playlist_id", UserData.recentId);
+                var result3 = collection3.Find(filter3).ToList();
+
+                foreach(var res in result3)
+                {
+                    QueueStatic.recents.Enqueue(res[4].ToString());
+                }
+
                 this.Hide();
                 Dashboard home = new Dashboard();
                 home.ShowDialog();

@@ -33,8 +33,8 @@ namespace SpotifyCloneUI
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.nameLabel = new System.Windows.Forms.Label();
             this.songsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
             this.emptyLabel = new System.Windows.Forms.Label();
+            this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
             this.songsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,18 @@ namespace SpotifyCloneUI
             this.songsPanel.Size = new System.Drawing.Size(487, 513);
             this.songsPanel.TabIndex = 8;
             // 
+            // emptyLabel
+            // 
+            this.emptyLabel.AutoSize = true;
+            this.emptyLabel.Font = new System.Drawing.Font("Yu Gothic", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emptyLabel.ForeColor = System.Drawing.Color.White;
+            this.emptyLabel.Location = new System.Drawing.Point(3, 0);
+            this.emptyLabel.Name = "emptyLabel";
+            this.emptyLabel.Size = new System.Drawing.Size(318, 42);
+            this.emptyLabel.TabIndex = 8;
+            this.emptyLabel.Text = "Wow! Such Empty....";
+            this.emptyLabel.Visible = false;
+            // 
             // deleteButton
             // 
             this.deleteButton.CheckedState.Parent = this.deleteButton;
@@ -91,18 +103,6 @@ namespace SpotifyCloneUI
             this.deleteButton.Size = new System.Drawing.Size(64, 51);
             this.deleteButton.TabIndex = 9;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
-            // emptyLabel
-            // 
-            this.emptyLabel.AutoSize = true;
-            this.emptyLabel.Font = new System.Drawing.Font("Yu Gothic", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emptyLabel.ForeColor = System.Drawing.Color.White;
-            this.emptyLabel.Location = new System.Drawing.Point(3, 0);
-            this.emptyLabel.Name = "emptyLabel";
-            this.emptyLabel.Size = new System.Drawing.Size(318, 42);
-            this.emptyLabel.TabIndex = 8;
-            this.emptyLabel.Text = "Wow! Such Empty....";
-            this.emptyLabel.Visible = false;
             // 
             // PlaylistView
             // 

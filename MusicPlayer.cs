@@ -33,6 +33,7 @@ namespace SpotifyCloneUI
         public string playlist_name;
         public string song_name;
         public string singer_name;
+        public string image_link;
         public MusicPlayer(string p_id, string s_link)
         {
             playlist_id = p_id;
@@ -69,6 +70,7 @@ namespace SpotifyCloneUI
 
         private void MusicPlayer_Load(object sender, EventArgs e)
         {
+            
             volumeSlider1.Value = 100;
             try
             {
@@ -135,7 +137,9 @@ namespace SpotifyCloneUI
                 singer_name = result3[0][3].ToString();
                 nameLabel.Text = song_name;
                 singerLabel.Text = singer_name;
-
+                addToRecents(song_link, song_name, singer_name);
+                image_link = result3[0][4].ToString();   
+                song_picture.Load(image_link);
                 outputDevice = new WaveOutEvent();
                 audioFile = new MediaFoundationReader(song_link);
                 outputDevice.Init(audioFile);
@@ -159,7 +163,9 @@ namespace SpotifyCloneUI
                 singer_name = result3[0][3].ToString();
                 nameLabel.Text = song_name;
                 singerLabel.Text = singer_name;
-
+                image_link = result3[0][4].ToString();
+                song_picture.Load(image_link);
+                addToRecents(song_link, song_name, singer_name);
                 outputDevice = new WaveOutEvent();
                 audioFile = new MediaFoundationReader(song_link);
                 outputDevice.Init(audioFile);
@@ -215,7 +221,9 @@ namespace SpotifyCloneUI
             singer_name = result3[0][3].ToString();
             nameLabel.Text = song_name;
             singerLabel.Text = singer_name;
-
+            image_link = result3[0][4].ToString();
+            song_picture.Load(image_link);
+            addToRecents(song_link, song_name, singer_name);
             outputDevice = new WaveOutEvent();
             audioFile = new MediaFoundationReader(song_link);
             outputDevice.Init(audioFile);
@@ -251,12 +259,60 @@ namespace SpotifyCloneUI
             singer_name = result3[0][3].ToString();
             nameLabel.Text = song_name;
             singerLabel.Text = singer_name;
-
+            image_link = result3[0][4].ToString();
+            song_picture.Load(image_link);
+            addToRecents(song_link, song_name, singer_name);
             outputDevice = new WaveOutEvent();
             audioFile = new MediaFoundationReader(song_link);
             outputDevice.Init(audioFile);
             outputDevice.Volume = volumeSlider1.Value / 100f;
             outputDevice.Play();
+        }
+
+        private void addToRecents(string s_link, string s_name,string singer_n)
+        {
+            if (QueueStatic.recents.Contains(s_link))
+            {
+
+            }
+            else
+            {
+                string song_l;
+                if (QueueStatic.recents.Count == 10)
+                {
+                    song_l = QueueStatic.recents.Peek();
+                    var collection = database.GetCollection<BsonDocument>("playlist_item");
+                    var builder = Builders<BsonDocument>.Filter;
+                    var filter = builder.And(builder.Eq("playlist_id", UserData.recentId), builder.Eq("link", song_l));
+                    var result = collection.FindOneAndDelete(filter);
+                    QueueStatic.recents.Dequeue();
+                    QueueStatic.recents.Enqueue(s_link);
+
+                    var song1 = new BsonDocument
+                 {
+                    { "playlist_id", UserData.recentId },
+                    { "name",s_name },
+                    { "singer",singer_n},
+                    { "link",s_link }
+                };
+                    collection.InsertOne(song1);
+
+                }
+                else
+                {
+                    var collection = database.GetCollection<BsonDocument>("playlist_item");
+                    QueueStatic.recents.Enqueue(s_link);
+                    var song1 = new BsonDocument
+                 {
+                    { "playlist_id", UserData.recentId },
+                    { "name",s_name },
+                    { "singer",singer_n},
+                    { "link",s_link }
+                };
+                    collection.InsertOne(song1);
+                }
+            }
+            
         }
         
     }

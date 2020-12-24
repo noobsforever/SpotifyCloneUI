@@ -75,15 +75,14 @@ namespace SpotifyCloneUI
 
 
             var collection2 = database.GetCollection<BsonDocument>("playlist");
-            
 
-            var playlist2 = new BsonDocument
+            var playlist1 = new BsonDocument
             {
                 { "user_id",userId },
-                {"name","Liked" }
+                {"name","Recently Played" }
             };
-            collection2.InsertOne(playlist2);
-            
+           
+            collection2.InsertOne(playlist1);
             this.Hide();
             Login login = new Login();
             login.ShowDialog();

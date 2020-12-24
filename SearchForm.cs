@@ -89,7 +89,7 @@ namespace SpotifyCloneUI
                                     alreadyInPlaylist = true;
                                 }
                             }
-                            if (!alreadyInPlaylist)
+                            if (!alreadyInPlaylist && playlist[2].ToString()!="Recently Played")
                             {
                                 songs[i].addPlaylistCombo(playlist[2].ToString());
                             }
