@@ -18,8 +18,22 @@ namespace SpotifyCloneUI
         public static IMongoDatabase database { get; set; }
         public static string MongoConnection = "mongodb+srv://sunderali416:sunderali416@clustersocialmediaproject-z6nzz.mongodb.net/test?retryWrites=true&w=majority";
         public static string MongoDatabase = "SpotifyClone";
+        IMongoCollection<BsonDocument> collection;
+        FilterDefinition<BsonDocument> builder;
+        List<BsonDocument> result;
+
+
+
+        IMongoCollection<BsonDocument> collection2;
+        FilterDefinitionBuilder<BsonDocument> builder2;
+        FilterDefinition<BsonDocument> filter2;
+        List<BsonDocument> result2;
+
+        IMongoCollection<BsonDocument> collection3;
+        FilterDefinitionBuilder<BsonDocument> builder3;
         public SearchForm()
         {
+            
             InitializeComponent();
         }
 
@@ -40,19 +54,7 @@ namespace SpotifyCloneUI
 
             if (searchText.Text != "")
             {
-                var collection = database.GetCollection<BsonDocument>("songs");
-                var builder = Builders<BsonDocument>.Filter.Empty;
-                var result = collection.Find(builder).SortBy(bson => bson["_id"]).ThenByDescending(bson => bson["_id"]).ToList();
-
-
-
-                var collection2 = database.GetCollection<BsonDocument>("playlist");
-                var builder2 = Builders<BsonDocument>.Filter;
-                var filter2 = builder2.Eq("user_id", UserData.id);
-                var result2 = collection2.Find(filter2).SortBy(bson => bson["_id"]).ThenByDescending(bson => bson["_id"]).ToList();
-
-                var collection3 = database.GetCollection<BsonDocument>("playlist_item");
-                var builder3 = Builders<BsonDocument>.Filter;
+                
                 bool alreadyInPlaylist = false;
 
                 var i = 0;
@@ -116,6 +118,16 @@ namespace SpotifyCloneUI
                 MessageBox.Show("Error");
                 throw;
             }
+            collection = database.GetCollection<BsonDocument>("songs");
+            builder = Builders<BsonDocument>.Filter.Empty;
+            result = collection.Find(builder).SortBy(bson => bson["_id"]).ThenByDescending(bson => bson["_id"]).ToList();
+
+            collection2 = database.GetCollection<BsonDocument>("playlist");
+            builder2 = Builders<BsonDocument>.Filter;
+            filter2 = builder2.Eq("user_id", UserData.id);
+            result2 = collection2.Find(filter2).SortBy(bson => bson["_id"]).ThenByDescending(bson => bson["_id"]).ToList();
+            collection3 = database.GetCollection<BsonDocument>("playlist_item");
+            builder3 = Builders<BsonDocument>.Filter;
         }
     }
 }

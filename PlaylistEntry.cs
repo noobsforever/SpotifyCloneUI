@@ -30,6 +30,13 @@ namespace SpotifyCloneUI
             set { playlist_id = value; }
         }
 
+        public void MakeVisible(string username)
+        {
+            byLabel.Visible = true;
+            byNameLabel.Visible = true;
+            byNameLabel.Text = username;
+        }
+
 
 
 

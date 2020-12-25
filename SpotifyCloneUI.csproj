@@ -151,6 +151,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicPlaylisView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicPlaylisView.Designer.cs">
+      <DependentUpon>PublicPlaylisView.cs</DependentUpon>
+    </Compile>
     <Compile Include="QueueStatic.cs" />
     <Compile Include="Registration.cs">
       <SubType>Form</SubType>
@@ -195,6 +201,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PublicPlaylisView.resx">
+      <DependentUpon>PublicPlaylisView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>

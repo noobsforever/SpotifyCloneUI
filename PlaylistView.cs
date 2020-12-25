@@ -42,6 +42,7 @@ namespace SpotifyCloneUI
 
         private void PlaylistView_Load(object sender, EventArgs e)
         {
+            bool UserOwned = true;
             if(playlist_name == "Liked" || playlist_name=="Recently Played")
             {
                 deleteButton.Visible = false;
@@ -65,6 +66,36 @@ namespace SpotifyCloneUI
             var filter = builder.Eq("playlist_id", playlist_id);
             var result = collection.Find(filter).SortBy(bson => bson["_id"]).ThenByDescending(bson => bson["_id"]).ToList();
 
+            var collection5 = database.GetCollection<BsonDocument>("playlist");
+            var builder5 = Builders<BsonDocument>.Filter;
+            var filter5 = builder5.Eq("_id", ObjectId.Parse(playlist_id));
+            var result5 = collection5.Find(filter5).SortBy(bson => bson["_id"]).ThenByDescending(bson => bson["_id"]).ToList();
+            if (result5[0][1].ToString() == UserData.id)
+            {
+                publicButton.Visible = true;
+                deleteButton.Visible = true;
+                UserOwned = true;
+            }
+            else
+            {
+                publicButton.Visible = false;
+                deleteButton.Visible = false;
+                UserOwned = false;
+            }
+
+            var collection4 = database.GetCollection<BsonDocument>("public_playlist");
+            var builder4 = Builders<BsonDocument>.Filter;
+            var filter4 = builder4.Eq("playlist_id", playlist_id);
+            var result4 = collection4.Find(filter4).ToList();
+            if (result4.Count > 0)
+            {
+                publicButton.Text = "Make Private";
+            }
+            else
+            {
+                publicButton.Text = "Make Public";
+            }
+
 
             var collection2 = database.GetCollection<BsonDocument>("playlist");
             var builder2 = Builders<BsonDocument>.Filter;
@@ -84,7 +115,10 @@ namespace SpotifyCloneUI
                 songitems[i].Singer_Name = song[3].ToString();
                 songitems[i].Song_Link = song[4].ToString();
                 songitems[i].Item_Id = song[0].ToString();
-                
+                if (!UserOwned)
+                {
+                    songitems[i].HideRemove();
+                }
                 foreach (var playlist in result2)
                 {
                     var filter3 = builder3.Eq("playlist_id", playlist[0].ToString());
@@ -141,6 +175,41 @@ namespace SpotifyCloneUI
             Dashboard home = new Dashboard();
             home.ShowDialog();
 
+        }
+
+        private void publicButton_Click(object sender, EventArgs e)
+        {
+            if(publicButton.Text=="Make Private")
+            {
+                var collection4 = database.GetCollection<BsonDocument>("public_playlist");
+                var builder4 = Builders<BsonDocument>.Filter;
+                var filter4 = builder4.Eq("playlist_id", playlist_id);
+                var result4 = collection4.Find(filter4).ToList();
+                foreach(var res in result4)
+                {
+                    collection4.DeleteOne(res);
+                }
+                this.Hide();
+                PlaylistView newview = new PlaylistView(playlist_id,playlist_name);
+                newview.Show();
+            }
+            else
+            {
+
+               
+                var collection = database.GetCollection<BsonDocument>("public_playlist");
+                var publicPl = new BsonDocument
+                {
+                    {"playlist_id",playlist_id },
+                    {"username", UserData.username },
+                    { "playlist_name",playlist_name },
+
+                };
+                collection.InsertOne(publicPl);
+                this.Hide();
+                PlaylistView newview = new PlaylistView(playlist_id, playlist_name);
+                newview.Show();
+            }
         }
     }
 }

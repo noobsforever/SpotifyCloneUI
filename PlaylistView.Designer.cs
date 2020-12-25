@@ -35,6 +35,7 @@ namespace SpotifyCloneUI
             this.songsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.emptyLabel = new System.Windows.Forms.Label();
             this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
+            this.publicButton = new Guna.UI2.WinForms.Guna2Button();
             this.songsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,18 +98,39 @@ namespace SpotifyCloneUI
             this.deleteButton.HoverState.Parent = this.deleteButton;
             this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
             this.deleteButton.ImageSize = new System.Drawing.Size(60, 60);
-            this.deleteButton.Location = new System.Drawing.Point(588, 12);
+            this.deleteButton.Location = new System.Drawing.Point(611, 12);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.ShadowDecoration.Parent = this.deleteButton;
             this.deleteButton.Size = new System.Drawing.Size(64, 51);
             this.deleteButton.TabIndex = 9;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // publicButton
+            // 
+            this.publicButton.BorderColor = System.Drawing.Color.White;
+            this.publicButton.BorderRadius = 15;
+            this.publicButton.BorderThickness = 1;
+            this.publicButton.CheckedState.Parent = this.publicButton;
+            this.publicButton.CustomImages.Parent = this.publicButton;
+            this.publicButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.publicButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.publicButton.ForeColor = System.Drawing.Color.White;
+            this.publicButton.HoverState.Parent = this.publicButton;
+            this.publicButton.ImageSize = new System.Drawing.Size(60, 60);
+            this.publicButton.Location = new System.Drawing.Point(524, 19);
+            this.publicButton.Name = "publicButton";
+            this.publicButton.ShadowDecoration.Parent = this.publicButton;
+            this.publicButton.Size = new System.Drawing.Size(81, 44);
+            this.publicButton.TabIndex = 10;
+            this.publicButton.Text = "Make Publilc";
+            this.publicButton.Click += new System.EventHandler(this.publicButton_Click);
+            // 
             // PlaylistView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(673, 598);
+            this.Controls.Add(this.publicButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.songsPanel);
             this.Controls.Add(this.nameLabel);
@@ -132,5 +154,6 @@ namespace SpotifyCloneUI
         private System.Windows.Forms.FlowLayoutPanel songsPanel;
         private Guna.UI2.WinForms.Guna2Button deleteButton;
         private System.Windows.Forms.Label emptyLabel;
+        private Guna.UI2.WinForms.Guna2Button publicButton;
     }
 }

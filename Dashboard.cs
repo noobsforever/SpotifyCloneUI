@@ -149,5 +149,12 @@ namespace SpotifyCloneUI
             PlaylistView playlistview = new PlaylistView(resultPlaylist[0].ToString(), "Recently Played");
             playlistview.ShowDialog();
         }
+
+        private void guna2Button2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            PublicPlaylisView newview = new PublicPlaylisView();
+            newview.ShowDialog();
+        }
     }
 }
