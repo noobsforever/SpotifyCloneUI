@@ -82,20 +82,22 @@ namespace SpotifyCloneUI
             this.searchText.Size = new System.Drawing.Size(371, 46);
             this.searchText.TabIndex = 4;
             this.searchText.TextChanged += new System.EventHandler(this.searchText_TextChanged);
+            this.searchText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchText_KeyDown);
+            this.searchText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchText_KeyPress);
             // 
             // songsPanel
             // 
             this.songsPanel.AutoScroll = true;
             this.songsPanel.Location = new System.Drawing.Point(25, 108);
             this.songsPanel.Name = "songsPanel";
-            this.songsPanel.Size = new System.Drawing.Size(493, 583);
+            this.songsPanel.Size = new System.Drawing.Size(493, 680);
             this.songsPanel.TabIndex = 5;
             // 
             // SearchForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(500, 703);
+            this.ClientSize = new System.Drawing.Size(500, 793);
             this.Controls.Add(this.songsPanel);
             this.Controls.Add(this.searchText);
             this.Controls.Add(this.guna2Button1);

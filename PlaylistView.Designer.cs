@@ -59,11 +59,11 @@ namespace SpotifyCloneUI
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Font = new System.Drawing.Font("Yu Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.ForeColor = System.Drawing.Color.White;
-            this.nameLabel.Location = new System.Drawing.Point(214, 19);
+            this.nameLabel.Location = new System.Drawing.Point(139, 16);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(233, 42);
+            this.nameLabel.Size = new System.Drawing.Size(177, 31);
             this.nameLabel.TabIndex = 7;
             this.nameLabel.Text = "Playlist Name";
             // 
@@ -73,7 +73,7 @@ namespace SpotifyCloneUI
             this.songsPanel.Controls.Add(this.emptyLabel);
             this.songsPanel.Location = new System.Drawing.Point(94, 73);
             this.songsPanel.Name = "songsPanel";
-            this.songsPanel.Size = new System.Drawing.Size(487, 513);
+            this.songsPanel.Size = new System.Drawing.Size(487, 710);
             this.songsPanel.TabIndex = 8;
             // 
             // emptyLabel
@@ -98,7 +98,7 @@ namespace SpotifyCloneUI
             this.deleteButton.HoverState.Parent = this.deleteButton;
             this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
             this.deleteButton.ImageSize = new System.Drawing.Size(60, 60);
-            this.deleteButton.Location = new System.Drawing.Point(611, 12);
+            this.deleteButton.Location = new System.Drawing.Point(501, 12);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.ShadowDecoration.Parent = this.deleteButton;
             this.deleteButton.Size = new System.Drawing.Size(64, 51);
@@ -117,7 +117,7 @@ namespace SpotifyCloneUI
             this.publicButton.ForeColor = System.Drawing.Color.White;
             this.publicButton.HoverState.Parent = this.publicButton;
             this.publicButton.ImageSize = new System.Drawing.Size(60, 60);
-            this.publicButton.Location = new System.Drawing.Point(524, 19);
+            this.publicButton.Location = new System.Drawing.Point(402, 16);
             this.publicButton.Name = "publicButton";
             this.publicButton.ShadowDecoration.Parent = this.publicButton;
             this.publicButton.Size = new System.Drawing.Size(81, 44);
@@ -129,7 +129,7 @@ namespace SpotifyCloneUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(673, 598);
+            this.ClientSize = new System.Drawing.Size(558, 795);
             this.Controls.Add(this.publicButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.songsPanel);

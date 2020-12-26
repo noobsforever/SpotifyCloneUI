@@ -43,10 +43,7 @@ namespace SpotifyCloneUI
         private void PlaylistView_Load(object sender, EventArgs e)
         {
             bool UserOwned = true;
-            if(playlist_name == "Liked" || playlist_name=="Recently Played")
-            {
-                deleteButton.Visible = false;
-            }
+            
             try
             {
                 client = new MongoClient(MongoConnection);
@@ -81,6 +78,11 @@ namespace SpotifyCloneUI
                 publicButton.Visible = false;
                 deleteButton.Visible = false;
                 UserOwned = false;
+            }
+            if (playlist_name == "Liked" || playlist_name == "Recently Played")
+            {
+                deleteButton.Visible = false;
+                publicButton.Visible = false;
             }
 
             var collection4 = database.GetCollection<BsonDocument>("public_playlist");
