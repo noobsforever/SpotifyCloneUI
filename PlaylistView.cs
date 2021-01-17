@@ -30,7 +30,7 @@ namespace SpotifyCloneUI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Dashboard dashboard = new Dashboard();
             dashboard.ShowDialog();
         }

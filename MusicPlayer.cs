@@ -314,6 +314,24 @@ namespace SpotifyCloneUI
             }
             
         }
-        
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            outputDevice?.Stop();
+            outputDevice.Dispose();
+            outputDevice = null;
+            audioFile.Dispose();
+            audioFile = null;
+            this.Dispose();
+        }
+
+        private void MusicPlayer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            outputDevice?.Stop();
+            outputDevice.Dispose();
+            outputDevice = null;
+            audioFile.Dispose();
+            audioFile = null;
+        }
     }
 }

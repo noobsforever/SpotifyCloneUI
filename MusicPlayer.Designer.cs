@@ -30,7 +30,6 @@ namespace SpotifyCloneUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusicPlayer));
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.volumeSlider1 = new Guna.UI2.WinForms.Guna2HScrollBar();
             this.singerLabel = new System.Windows.Forms.Label();
@@ -45,23 +44,6 @@ namespace SpotifyCloneUI
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.song_picture)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button1.Location = new System.Drawing.Point(-6, -2);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(118, 68);
-            this.guna2Button1.TabIndex = 2;
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // panel1
             // 
@@ -232,11 +214,11 @@ namespace SpotifyCloneUI
             this.ClientSize = new System.Drawing.Size(965, 568);
             this.Controls.Add(this.playlistnameLabel);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.guna2Button1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MusicPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MusicPlayer";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MusicPlayer_FormClosed);
             this.Load += new System.EventHandler(this.MusicPlayer_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -247,8 +229,6 @@ namespace SpotifyCloneUI
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button stopButton;
         private Guna.UI2.WinForms.Guna2Button pauseButton;

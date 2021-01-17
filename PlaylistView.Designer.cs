@@ -30,7 +30,7 @@ namespace SpotifyCloneUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlaylistView));
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+           this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.nameLabel = new System.Windows.Forms.Label();
             this.songsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.emptyLabel = new System.Windows.Forms.Label();

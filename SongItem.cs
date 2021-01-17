@@ -71,6 +71,11 @@ namespace SpotifyCloneUI
             addButton.Items.Add(playlist_name);
         }
 
+        public void HideCombo()
+        {
+            addButton.Visible = false;
+        }
+
 
         #endregion
         public SongItem()
@@ -98,9 +103,9 @@ namespace SpotifyCloneUI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            ParentForm.Hide();
+            
             MusicPlayer player = new MusicPlayer(Playlist_Id, Song_Link);
-            player.ShowDialog();
+            player.Show();
         }
 
         private void SongItem_Load(object sender, EventArgs e)

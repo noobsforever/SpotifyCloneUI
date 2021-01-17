@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System.Diagnostics;
 namespace SpotifyCloneUI
 {
     public partial class Login : Form
@@ -99,6 +100,31 @@ namespace SpotifyCloneUI
                 MessageBox.Show("Connectivity Error...Please Check Your Internet...");
                 throw;
             }
-        }
-    }
-}
+            /*
+            var collection = database.GetCollection<BsonDocument>("songs");
+            var builder = Builders<BsonDocument>.Filter.Empty;
+            var result = collection.Find(builder).SortBy(bson => bson["_id"]).ThenByDescending(bson => bson["_id"]).ToList();
+            string lyrics;
+            var collection1 = database.GetCollection<BsonDocument>("genres");
+            string genre;
+            foreach (var res in result)
+            {
+                lyrics = res[5].ToString();
+                System.IO.File.WriteAllText("Data\\Input.txt", lyrics);
+                Process.Start("task1.exe");
+                System.Threading.Thread.Sleep(11000);
+                genre= System.IO.File.ReadAllText("Data\\Output.txt");
+                var newGenre = new BsonDocument
+                {
+                    {"song_id",res[0].ToString() },
+                    {"song_name",res[1].ToString() },
+                    {"genre",genre },
+                };
+                collection1.InsertOne(newGenre); 
+                
+            }
+            */
+
+        }//function end
+    }  //class end
+}   //namespace end

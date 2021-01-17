@@ -156,5 +156,18 @@ namespace SpotifyCloneUI
             PublicPlaylisView newview = new PublicPlaylisView();
             newview.ShowDialog();
         }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            var collection = database.GetCollection<BsonDocument>("playlist");
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.And(builder.Eq("name", "Recently Played"), builder.Eq("user_id", UserData.id));
+            var result = collection.Find(filter).ToList();
+            var resultPlaylist = result[0];                     //recently played songs
+            this.Hide();
+            Recommendation rec = new Recommendation(resultPlaylist[0].ToString());
+            rec.ShowDialog();
+
+        }
     }
 }
