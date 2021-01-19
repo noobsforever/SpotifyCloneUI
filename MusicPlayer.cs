@@ -315,7 +315,7 @@ namespace SpotifyCloneUI
             addToRecents(song_link, song_name, singer_name);
             
             outputDevice.Play();
-           
+            
             thread1 = new Thread(loadNext);
             thread2 = new Thread(loadPrevious);
             thread1.Start();
