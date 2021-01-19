@@ -30,12 +30,12 @@ namespace SpotifyCloneUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlaylistView));
-           this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.nameLabel = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.songsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.emptyLabel = new System.Windows.Forms.Label();
             this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
             this.publicButton = new Guna.UI2.WinForms.Guna2Button();
+            this.nameLabel = new System.Windows.Forms.Label();
             this.songsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,17 +55,6 @@ namespace SpotifyCloneUI
             this.guna2Button1.Size = new System.Drawing.Size(118, 68);
             this.guna2Button1.TabIndex = 0;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.ForeColor = System.Drawing.Color.White;
-            this.nameLabel.Location = new System.Drawing.Point(139, 16);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(177, 31);
-            this.nameLabel.TabIndex = 7;
-            this.nameLabel.Text = "Playlist Name";
             // 
             // songsPanel
             // 
@@ -125,15 +114,26 @@ namespace SpotifyCloneUI
             this.publicButton.Text = "Make Publilc";
             this.publicButton.Click += new System.EventHandler(this.publicButton_Click);
             // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.ForeColor = System.Drawing.Color.White;
+            this.nameLabel.Location = new System.Drawing.Point(156, 29);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(177, 31);
+            this.nameLabel.TabIndex = 7;
+            this.nameLabel.Text = "Playlist Name";
+            // 
             // PlaylistView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(558, 795);
             this.Controls.Add(this.publicButton);
+            this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.songsPanel);
-            this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.guna2Button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PlaylistView";
@@ -150,10 +150,10 @@ namespace SpotifyCloneUI
         #endregion
 
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.FlowLayoutPanel songsPanel;
         private Guna.UI2.WinForms.Guna2Button deleteButton;
         private System.Windows.Forms.Label emptyLabel;
         private Guna.UI2.WinForms.Guna2Button publicButton;
+        private System.Windows.Forms.Label nameLabel;
     }
 }

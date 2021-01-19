@@ -41,8 +41,10 @@ namespace SpotifyCloneUI
             this.playButton = new Guna.UI2.WinForms.Guna2Button();
             this.nextButton = new Guna.UI2.WinForms.Guna2Button();
             this.playlistnameLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.song_picture)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -201,20 +203,30 @@ namespace SpotifyCloneUI
             this.playlistnameLabel.AutoSize = true;
             this.playlistnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playlistnameLabel.ForeColor = System.Drawing.Color.White;
-            this.playlistnameLabel.Location = new System.Drawing.Point(381, 11);
+            this.playlistnameLabel.Location = new System.Drawing.Point(400, 8);
             this.playlistnameLabel.Name = "playlistnameLabel";
             this.playlistnameLabel.Size = new System.Drawing.Size(165, 31);
             this.playlistnameLabel.TabIndex = 4;
             this.playlistnameLabel.Text = "Song Name";
+            this.playlistnameLabel.Click += new System.EventHandler(this.playlistnameLabel_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.playlistnameLabel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(965, 39);
+            this.panel2.TabIndex = 5;
             // 
             // MusicPlayer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(965, 568);
-            this.Controls.Add(this.playlistnameLabel);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "MusicPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MusicPlayer";
@@ -223,8 +235,9 @@ namespace SpotifyCloneUI
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.song_picture)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -240,5 +253,6 @@ namespace SpotifyCloneUI
         private System.Windows.Forms.Label singerLabel;
         private Guna.UI2.WinForms.Guna2HScrollBar volumeSlider1;
         private System.Windows.Forms.Label playlistnameLabel;
+        private System.Windows.Forms.Panel panel2;
     }
 }

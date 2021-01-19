@@ -41,6 +41,14 @@ namespace SpotifyCloneUI
                 MessageBox.Show("Error");
                 throw;
             }
+            var collection2 = database.GetCollection<BsonDocument>("playlist");
+            var builder2 = Builders<BsonDocument>.Filter.Empty;
+            var result2 = collection2.Find(builder2).SortBy(bson => bson["_id"]).ThenByDescending(bson => bson["_id"]).ToList();
+            List<string> Tplaylists=new List<string>();
+            foreach(var res in result2)
+            {
+                Tplaylists.Add(res[0].ToString());
+            }
             var i = 0;
             var collection = database.GetCollection<BsonDocument>("public_playlist");
             var builder = Builders<BsonDocument>.Filter.Empty;
@@ -51,7 +59,7 @@ namespace SpotifyCloneUI
                 PlaylistEntry[] playlists = new PlaylistEntry[result.Count];
                 foreach (var playlist in result)
                 {
-                    if (playlist[2].ToString() != "Recently Played")
+                    if (playlist[2].ToString() != "Recently Played" && Tplaylists.Contains(playlist[1].ToString()))
                     {
                         playlists[i] = new PlaylistEntry();
                         playlists[i].Playlist_Name = playlist[3].ToString();

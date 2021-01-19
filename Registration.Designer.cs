@@ -1,5 +1,4 @@
-﻿
-namespace SpotifyCloneUI
+﻿namespace SpotifyCloneUI
 {
     partial class Registration
     {

@@ -78,6 +78,38 @@ namespace SpotifyCloneUI
            
         }
 
+        public static async Task LoadCombo(List<BsonDocument> result2,FilterDefinitionBuilder<BsonDocument> builder3, IMongoCollection<BsonDocument> collection3, BsonDocument song,SongItem songs)
+        {
+            await Task.Run(() =>
+            {
+                bool alreadyInPlaylist = false;
+                foreach (var playlist in result2)
+                {
+
+
+
+
+                    var filter3 = builder3.Eq("playlist_id", playlist[0].ToString());
+                    var result3 = collection3.Find(filter3).ToList();
+                    alreadyInPlaylist = false;
+                    foreach (var songResult in result3)
+                    {
+                        if (songResult[2].ToString() == song[1].ToString())
+                        {
+                            alreadyInPlaylist = true;
+                        }
+                    }
+                    if (!alreadyInPlaylist && playlist[2].ToString() != "Recently Played")
+                    {
+                        songs.addPlaylistCombo(playlist[2].ToString());
+                    }
+
+
+                }
+            });
+        }
+
+
         private void searchText_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode==Keys.Enter && searchText.Text != "")
@@ -91,7 +123,7 @@ namespace SpotifyCloneUI
                 if (searchText.Text != "")
                 {
 
-                    bool alreadyInPlaylist = false;
+                    
 
                     var i = 0;
                     SongItem[] songs = new SongItem[result.Count];
@@ -113,27 +145,9 @@ namespace SpotifyCloneUI
                             songs[i].Song_Link = song[2].ToString();
                             songs[i].Item_Id = song[0].ToString();
                             songs[i].addButtonName = "Add To A Playlist";
-                            foreach (var playlist in result2)
-                            {
 
-
-                                var filter3 = builder3.Eq("playlist_id", playlist[0].ToString());
-                                var result3 = collection3.Find(filter3).ToList();
-                                alreadyInPlaylist = false;
-                                foreach (var songResult in result3)
-                                {
-                                    if (songResult[2].ToString() == song[1].ToString())
-                                    {
-                                        alreadyInPlaylist = true;
-                                    }
-                                }
-                                if (!alreadyInPlaylist && playlist[2].ToString() != "Recently Played")
-                                {
-                                    songs[i].addPlaylistCombo(playlist[2].ToString());
-                                }
-
-
-                            }
+                            _ = LoadCombo(result2, builder3, collection3, song, songs[i]);
+                            
                             songs[i].HideRemove();
                             songsPanel.Controls.Add(songs[i]);
                             i++;
@@ -142,18 +156,6 @@ namespace SpotifyCloneUI
                 }
 
                 }//if end
-
-
-
-
-
-
-
-
-
-
-
-
-            }
+            }   //function end
     }
 }

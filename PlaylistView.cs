@@ -168,7 +168,18 @@ namespace SpotifyCloneUI
             var filter2 = builder2.Eq("_id", ObjectId.Parse(playlist_id));
             var result2 = collection2.Find(filter2).SortBy(bson => bson["_id"]).ThenByDescending(bson => bson["_id"]).ToList();
 
-            foreach(var res in result2)
+
+            var collection3 = database.GetCollection<BsonDocument>("public_playlist");
+            var builder3 = Builders<BsonDocument>.Filter;
+            var filter3 = builder3.Eq("playlist_id", playlist_id);
+            var result3 = collection3.Find(filter3).ToList();
+
+            foreach(var res in result3)
+            {
+                collection3.DeleteOne(res);
+            }
+
+            foreach (var res in result2)
             {
                 collection2.DeleteOne(res);
             }

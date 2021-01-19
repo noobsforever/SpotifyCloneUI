@@ -154,6 +154,7 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DoublyLinked.cs" />
+    <Compile Include="HashTableSinger.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
