@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System.Net;
+using System.Net.Mail;
 namespace SpotifyCloneUI
 {
     public partial class Dashboard : Form
@@ -168,6 +170,36 @@ namespace SpotifyCloneUI
             Recommendation rec = new Recommendation(resultPlaylist[0].ToString());
             rec.ShowDialog();
 
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+            Login login = new Login();
+            login.ShowDialog();
+            
+        }
+
+        private void sendEmail(string text)
+        {
+            try
+            {
+                MailMessage message = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                message.From = new MailAddress("sunderlaghari416@gmail.com");
+                message.To.Add(new MailAddress("redtire123@gmail.com"));
+                message.Subject = "Recovery Code";
+                message.Body = text;
+                smtp.Port = 587;
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("sunderlaghari416@gmail.com", "");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
+            }
+            catch (Exception) { MessageBox.Show("Error"); }
         }
     }
 }

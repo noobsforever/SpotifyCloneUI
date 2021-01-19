@@ -41,6 +41,7 @@ namespace SpotifyCloneUI
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.logoutButton = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.playlistPanel.SuspendLayout();
             this.SuspendLayout();
@@ -97,7 +98,7 @@ namespace SpotifyCloneUI
             this.playlistInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.playlistInput.HoverState.Parent = this.playlistInput;
             this.playlistInput.IconLeft = ((System.Drawing.Image)(resources.GetObject("playlistInput.IconLeft")));
-            this.playlistInput.Location = new System.Drawing.Point(12, 442);
+            this.playlistInput.Location = new System.Drawing.Point(13, 487);
             this.playlistInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.playlistInput.Name = "playlistInput";
             this.playlistInput.PasswordChar = '\0';
@@ -176,7 +177,7 @@ namespace SpotifyCloneUI
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
             this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.Location = new System.Drawing.Point(12, 216);
+            this.guna2Button3.Location = new System.Drawing.Point(12, 211);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
             this.guna2Button3.Size = new System.Drawing.Size(237, 53);
@@ -197,7 +198,7 @@ namespace SpotifyCloneUI
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.Location = new System.Drawing.Point(12, 289);
+            this.guna2Button2.Location = new System.Drawing.Point(12, 280);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(237, 53);
@@ -218,7 +219,7 @@ namespace SpotifyCloneUI
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
             this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
             this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button4.Location = new System.Drawing.Point(12, 359);
+            this.guna2Button4.Location = new System.Drawing.Point(12, 349);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
             this.guna2Button4.Size = new System.Drawing.Size(237, 53);
@@ -226,12 +227,34 @@ namespace SpotifyCloneUI
             this.guna2Button4.Text = "Recommended";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
+            // logoutButton
+            // 
+            this.logoutButton.BorderColor = System.Drawing.Color.White;
+            this.logoutButton.BorderRadius = 15;
+            this.logoutButton.BorderThickness = 1;
+            this.logoutButton.CheckedState.Parent = this.logoutButton;
+            this.logoutButton.CustomImages.Parent = this.logoutButton;
+            this.logoutButton.FillColor = System.Drawing.Color.Black;
+            this.logoutButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutButton.ForeColor = System.Drawing.Color.White;
+            this.logoutButton.HoverState.Parent = this.logoutButton;
+            this.logoutButton.Image = ((System.Drawing.Image)(resources.GetObject("logoutButton.Image")));
+            this.logoutButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.logoutButton.Location = new System.Drawing.Point(13, 418);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.ShadowDecoration.Parent = this.logoutButton;
+            this.logoutButton.Size = new System.Drawing.Size(237, 53);
+            this.logoutButton.TabIndex = 11;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(1073, 605);
             this.Controls.Add(this.guna2Button4);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button3);
             this.Controls.Add(this.label1);
@@ -266,5 +289,6 @@ namespace SpotifyCloneUI
         private System.Windows.Forms.Label emptyLabel;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button logoutButton;
     }
 }
