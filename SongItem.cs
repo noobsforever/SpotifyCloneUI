@@ -73,7 +73,10 @@ namespace SpotifyCloneUI
             {
                 addButton.Invoke(new MethodInvoker(delegate { addButton.Items.Add(playlist_name); }));
             }
-            ;
+            else
+            {
+                addButton.Items.Add(playlist_name);
+            }
         }
 
         public void HideCombo()

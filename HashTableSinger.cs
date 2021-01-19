@@ -39,7 +39,7 @@ namespace SpotifyCloneUI
         {
             int index;
             int num=0;
-            string forSearch = makeValidString(singer);
+            string forSearch = makeValidString(song);
             for(int i = 0; i < forSearch.Length; i++)
             {
                 num += forSearch[i];
@@ -71,6 +71,7 @@ namespace SpotifyCloneUI
         private int LinearProbe(int ind)
         {
             ind++;
+            
             while (true)
             {
                 if (singersForSearch[ind] == "")
@@ -80,16 +81,20 @@ namespace SpotifyCloneUI
                 else
                 {
                     ind++;
+                    if (ind == tableSize)
+                    {
+                        ind = 0;
+                    }
                 }
             }
 
             return ind;
         }
-        private int getIndex(string searchQ)
+        public int getIndex(string searchQ)
         {
             int num = 0;
             int index = 0;
-            bool found = false;
+            
             int j = 0;
             searchQ = makeValidString(searchQ);
             for(int i = 0; i < searchQ.Length; i++)
@@ -99,7 +104,7 @@ namespace SpotifyCloneUI
             index = num % tableSize;
             if (singersForSearch[index] == searchQ)
             {
-                found = true;
+                
                 return index;
             }
             else
@@ -119,7 +124,7 @@ namespace SpotifyCloneUI
                 }
             }
             
-            return -1;
+            
         }
 
         private string makeValidString(string str)

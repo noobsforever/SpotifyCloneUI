@@ -201,5 +201,12 @@ namespace SpotifyCloneUI
             }
             catch (Exception) { MessageBox.Show("Error"); }
         }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SearchBySinger search = new SearchBySinger();
+            search.ShowDialog();
+        }
     }
 }
