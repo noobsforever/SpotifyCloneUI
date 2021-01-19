@@ -52,6 +52,7 @@ namespace SpotifyCloneUI
         private void registerButton_Click(object sender, EventArgs e)
         {
             {
+                
                 var dobtext = dobText.Value.ToString();
                 if (nameText.Text == "" || emailText.Text == "" || usernameText.Text == "" || passwordText.Text == "")
                 {
@@ -173,5 +174,15 @@ namespace SpotifyCloneUI
                 }
             }
             }
+
+        private void nameText_MouseHover(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Name(Two Word Should Not Include Numbers)\nUsername(No Spaces May Contain Number After Letters)\nPassword(Length Greater Than 8 and Less than 15)\nAge(Should Be Greater Than 15)");
+        }
     }
 }

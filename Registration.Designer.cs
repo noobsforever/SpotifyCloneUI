@@ -46,6 +46,7 @@
             this.usernameText = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dobText = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +65,7 @@
             // 
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(785, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 33);
@@ -160,6 +162,7 @@
             this.nameText.Name = "nameText";
             this.nameText.Size = new System.Drawing.Size(271, 20);
             this.nameText.TabIndex = 11;
+            this.nameText.MouseHover += new System.EventHandler(this.nameText_MouseHover);
             // 
             // label6
             // 
@@ -213,11 +216,25 @@
             this.dobText.Size = new System.Drawing.Size(200, 20);
             this.dobText.TabIndex = 24;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label9.Font = new System.Drawing.Font("Yu Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Crimson;
+            this.label9.Location = new System.Drawing.Point(796, 486);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(24, 27);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "?";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
             // Registration
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(847, 522);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.dobText);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -266,5 +283,6 @@
         private System.Windows.Forms.TextBox usernameText;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dobText;
+        private System.Windows.Forms.Label label9;
     }
 }
